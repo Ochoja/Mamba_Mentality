@@ -13,6 +13,7 @@ button {
   border-radius: 4px;
   padding: 9px 16px;
   border: none;
-  font-weight: 700;
+  font-weight: 700 !important;
+  cursor: pointer;
 }
 </style>
