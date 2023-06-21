@@ -5,12 +5,17 @@ defineProps({
   level: String,
   cta: String,
   description: String,
-  background: String,
+  background: String
 })
 </script>
 
 <template>
-  <div class="card" :style="{background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(${background})`}">
+  <div
+    class="card"
+    :style="{
+      background: `linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(${background})`
+    }"
+  >
     <div class="level">
       {{ level }}
     </div>
@@ -23,8 +28,8 @@ defineProps({
 
 <style lang="scss" scoped>
 .card {
-  max-width: 280px;
-  padding: 30px;
+  max-width: 300px;
+  padding: 35px;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -32,13 +37,13 @@ defineProps({
   border-radius: 4px;
   text-align: center;
 
-  .level{
+  .level {
     font-size: 1.15em;
     font-weight: 700;
     margin-bottom: 20px;
   }
 
-  .description{
+  .description {
     font-weight: 400;
     font-size: 1.05em;
     margin-bottom: 20px;

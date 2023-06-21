@@ -9,7 +9,8 @@ const trainings = [
     description:
       'Learn the fundamentals of the game. Learn the rules and basic skills like passing and dribbling and shooting',
     cta: 'Start Learning',
-    background: 'https://ik.imagekit.io/Ochoja01/Mamba_Mentality/traning.png?updatedAt=1687380866894'
+    background:
+      'https://ik.imagekit.io/Ochoja01/Mamba_Mentality/traning.png?updatedAt=1687380866894'
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const trainings = [
     description:
       'Improve upon basic skills. Gain better understanding of the game. Take skills to the next level.',
     cta: 'Improve My Game',
-    background: 'https://ik.imagekit.io/Ochoja01/Mamba_Mentality/training2.png?updatedAt=1687380869575'
+    background:
+      'https://ik.imagekit.io/Ochoja01/Mamba_Mentality/training2.png?updatedAt=1687380869575'
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ const trainings = [
     description:
       'Develop deep understanding of the game. Perfect your skills to compete professionally.',
     cta: 'Master My Craft',
-    background: 'https://ik.imagekit.io/Ochoja01/Mamba_Mentality/training3.png?updatedAt=1687380869141'
+    background:
+      'https://ik.imagekit.io/Ochoja01/Mamba_Mentality/training3.png?updatedAt=1687380869141'
   }
 ]
 </script>
@@ -44,12 +47,12 @@ const trainings = [
     <h2>Training that suit your needs</h2>
     <div class="cards">
       <TrainingCard
-      v-for="training in trainings"
-      :level="training.level"
-      :description="training.description"
-      :cta="training.cta"
-      :key="training.id"
-      :background="training.background"
+        v-for="training in trainings"
+        :level="training.level"
+        :description="training.description"
+        :cta="training.cta"
+        :key="training.id"
+        :background="training.background"
       >
       </TrainingCard>
     </div>
@@ -59,17 +62,90 @@ const trainings = [
     <h2>How Tos</h2>
 
     <div class="category">
-      <div class="active">
-        Articles
-      </div>
+      <div class="active">Articles</div>
       <div>Videos</div>
     </div>
 
     <div class="articles">
       <div class="post">
-        <div class="img"></div>
+        <div class="img">
+          <img
+            src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/blogimg.png?updatedAt=1687385606459"
+            alt=""
+          />
+        </div>
         <div class="title">The Art of Shooting - How to shoot the rock</div>
-        <div class="snippet">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, blanditiis nemo cum doloremque rerum neque adipisci ab debitis perspiciatis, pariatur voluptates nobis molestias tempora beatae inventore illo at maxime aliquid?</div>
+        <div class="snippet">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, blanditiis nemo cum
+          doloremque...
+        </div>
+
+        <div class="publisher">
+          <div class="author-img">
+            <img
+              src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/faceimg.png?updatedAt=1687387303755"
+              alt=""
+            />
+          </div>
+          <div class="author">
+            <div class="name">Ash Steve</div>
+            <div class="date">24th September, 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="img">
+          <img
+            src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/blogimg.png?updatedAt=1687385606459"
+            alt=""
+          />
+        </div>
+        <div class="title">The Art of Shooting - How to shoot the rock</div>
+        <div class="snippet">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, blanditiis nemo cum
+          doloremque...
+        </div>
+
+        <div class="publisher">
+          <div class="author-img">
+            <img
+              src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/faceimg.png?updatedAt=1687387303755"
+              alt=""
+            />
+          </div>
+          <div class="author">
+            <div class="name">Ash Steve</div>
+            <div class="date">24th September, 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="img">
+          <img
+            src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/blogimg.png?updatedAt=1687385606459"
+            alt=""
+          />
+        </div>
+        <div class="title">The Art of Shooting - How to shoot the rock</div>
+        <div class="snippet">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, blanditiis nemo cum
+          doloremque...
+        </div>
+
+        <div class="publisher">
+          <div class="author-img">
+            <img
+              src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/faceimg.png?updatedAt=1687387303755"
+              alt=""
+            />
+          </div>
+          <div class="author">
+            <div class="name">Ash Steve</div>
+            <div class="date">24th September, 2023</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -128,21 +204,87 @@ header {
   }
 }
 
-.how-tos{
+.how-tos {
   text-align: center;
 
-  .category{
+  .category {
     display: flex;
     gap: 30px;
     font-size: 1.3em;
     justify-content: center;
     margin: 10px 0 20px 0;
 
-    .active{
+    .active {
       height: 5px;
       border-radius: 5px;
       font-weight: 700;
       box-shadow: 0 30px 0 0 var(--secondary-color);
+    }
+  }
+
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    .post {
+      max-width: 300px;
+      text-align: left;
+      padding: 8px;
+      border: 1px solid rgba($color: #000000, $alpha: 0.5);
+      border-radius: 4px;
+
+      .img {
+        height: 160px;
+        object-fit: contain;
+
+        img {
+          height: inherit;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      .title {
+        font-weight: 700;
+        font-size: 0.95em;
+        margin: 12px 0 12px 0;
+      }
+
+      .snippet {
+        font-size: 0.9em;
+        margin-bottom: 12px;
+      }
+
+      .publisher {
+        display: flex;
+        gap: 10px;
+        .author-img {
+          height: 50px;
+          object-fit: contain;
+          border-radius: 50%;
+
+          img {
+            height: inherit;
+            object-fit: cover;
+            width: 100%;
+            border-radius: inherit;
+          }
+        }
+
+        .author {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .name {
+            font-size: 0.95em;
+            font-weight: 700;
+          }
+          .date {
+            font-size: 0.9em;
+          }
+        }
+      }
     }
   }
 }
