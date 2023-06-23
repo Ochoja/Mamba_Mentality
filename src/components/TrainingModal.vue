@@ -1,17 +1,33 @@
 <script setup>
+import { reactive } from 'vue'
 import Button from '../components/DynamicButton.vue'
 import { Icon } from '@iconify/vue'
 
-const levels = [
+const levels = reactive([
   { id: 1, skill: 'Beginner', active: false },
   { id: 2, skill: 'Intermediate', active: false },
   { id: 3, skill: 'Advanced', active: false }
-]
+])
 
+const skills = reactive([
+  {id: 1, trait: 'Shooting', active: false},
+  {id: 2, trait: 'Dribbling', active: false},
+  {id: 3, trait: 'Passing', active: false},
+  {id: 4, trait: 'Finishing', active: false},
+])
+
+//toggle item
 function toggleActive(array, id) {
   let arr = eval(array)
-  arr[id].active = !arr[id].active
-  console.log(arr[id].active)
+
+  //turn off other selections
+  for (const item of arr) {
+    if (item.id == id) continue
+    item.active = false
+  }
+
+  id = id - 1  //index is n-1
+  arr[id].active = !arr[id].active  //toggle class
 }
 </script>
 
@@ -40,23 +56,8 @@ function toggleActive(array, id) {
 
       <h3>Area of Focus</h3>
       <div class="items">
-        <div class="skill">
-          <div class="text">Shooting</div>
-          <div class="icon"></div>
-        </div>
-
-        <div class="skill">
-          <div class="text">Dribbling</div>
-          <div class="icon"></div>
-        </div>
-
-        <div class="skill">
-          <div class="text">Passing</div>
-          <div class="icon"></div>
-        </div>
-
-        <div class="skill">
-          <div class="text">Finishing</div>
+        <div :class="{skill: true, active: skill.active}" v-for="skill in skills" :key="skill.id" @click="toggleActive('skills', skill.id)">
+          <div class="text">{{skill.trait}}</div>
           <div class="icon"></div>
         </div>
       </div>
