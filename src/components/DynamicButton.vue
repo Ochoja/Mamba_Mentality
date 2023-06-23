@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  type: String,
+  type: String
 })
 </script>
 
@@ -24,8 +24,8 @@ button {
   cursor: pointer;
 }
 
-.danger{
-  background: #FF0000;
+.danger {
+  background: #ff0000;
   color: #fff;
 }
 </style>
