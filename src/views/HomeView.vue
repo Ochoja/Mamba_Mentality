@@ -1,6 +1,7 @@
 <script setup>
 import Button from '../components/DynamicButton.vue'
 import TrainingCard from '../components/TrainingCard.vue'
+import Modal from '../components/TrainingModal.vue'
 
 const trainings = [
   {
@@ -34,6 +35,10 @@ const trainings = [
 </script>
 
 <template>
+  <Teleport to="body">
+    <Modal></Modal>
+  </Teleport>
+
   <header>
     <div class="text">
       <h1 class="slogan">Never let good enough <span class="green">be</span> enough!</h1>

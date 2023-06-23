@@ -1,7 +1,14 @@
-<script></script>
+<script setup>
+defineProps({
+  type: String,
+})
+</script>
 
 <template>
-  <button>
+  <button v-if="type == 'danger'" class="danger">
+    <slot>Click Me!</slot>
+  </button>
+  <button v-else>
     <slot>Click Me!</slot>
   </button>
 </template>
@@ -15,5 +22,10 @@ button {
   border: none;
   font-weight: 700 !important;
   cursor: pointer;
+}
+
+.danger{
+  background: #FF0000;
+  color: #fff;
 }
 </style>
