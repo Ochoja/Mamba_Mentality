@@ -44,7 +44,7 @@ const trainings = [
   </header>
 
   <section class="training">
-    <h2>Training that suit your needs</h2>
+    <h2>Best Training For You</h2>
     <div class="cards">
       <TrainingCard
         v-for="training in trainings"
@@ -172,7 +172,8 @@ header {
     text-align: center;
 
     .slogan {
-      font-size: 3em;
+      font-size: 4em;
+      font-weight: 700;
       margin-bottom: 5px;
 
       .green {
@@ -223,6 +224,8 @@ header {
   }
 
   .articles {
+    width: 80%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

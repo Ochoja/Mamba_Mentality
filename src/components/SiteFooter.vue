@@ -22,7 +22,7 @@ footer {
   align-items: center;
   color: #fff;
   background: #000;
-  margin-top: 100px;
+  margin-top: 150px;
   padding: 15px 30px;
 
   .logo {
