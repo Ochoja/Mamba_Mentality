@@ -16,18 +16,24 @@ const skills = reactive([
   {id: 4, trait: 'Finishing', active: false},
 ])
 
-//toggle item
+//selects item and deselects others
 function toggleActive(array, id) {
-  let arr = eval(array)
+  let arr = eval(array) //array holds name of array(ie levels, skills)
 
   //turn off other selections
   for (const item of arr) {
-    if (item.id == id) continue
+    if (item.id == id) continue // do not turn off active selection
     item.active = false
   }
 
   id = id - 1  //index is n-1
-  arr[id].active = !arr[id].active  //toggle class
+  arr[id].active = !arr[id].active  //invert value of active selection
+}
+
+//clear selections
+function clear() {
+  for (const item of levels) item.active = false //clear selections for level
+  for (const item of skills) item.active = false //clear selections for skills
 }
 </script>
 
@@ -64,7 +70,7 @@ function toggleActive(array, id) {
 
       <div class="buttons">
         <Button>Get Training</Button>
-        <Button type="danger">Clear Selection</Button>
+        <Button type="danger" @click="clear()">Clear Selection</Button>
       </div>
     </div>
   </div>
