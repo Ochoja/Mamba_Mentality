@@ -10,10 +10,10 @@ const levels = reactive([
 ])
 
 const skills = reactive([
-  {id: 1, trait: 'Shooting', active: false},
-  {id: 2, trait: 'Dribbling', active: false},
-  {id: 3, trait: 'Passing', active: false},
-  {id: 4, trait: 'Finishing', active: false},
+  { id: 1, trait: 'Shooting', active: false },
+  { id: 2, trait: 'Dribbling', active: false },
+  { id: 3, trait: 'Passing', active: false },
+  { id: 4, trait: 'Finishing', active: false }
 ])
 
 //selects item and deselects others
@@ -26,8 +26,8 @@ function toggleActive(array, id) {
     item.active = false
   }
 
-  id = id - 1  //index is n-1
-  arr[id].active = !arr[id].active  //invert value of active selection
+  id = id - 1 //index is n-1
+  arr[id].active = !arr[id].active //invert value of active selection
 }
 
 //clear selections
@@ -62,8 +62,13 @@ function clear() {
 
       <h3>Area of Focus</h3>
       <div class="items">
-        <div :class="{skill: true, active: skill.active}" v-for="skill in skills" :key="skill.id" @click="toggleActive('skills', skill.id)">
-          <div class="text">{{skill.trait}}</div>
+        <div
+          :class="{ skill: true, active: skill.active }"
+          v-for="skill in skills"
+          :key="skill.id"
+          @click="toggleActive('skills', skill.id)"
+        >
+          <div class="text">{{ skill.trait }}</div>
           <div class="icon"></div>
         </div>
       </div>
