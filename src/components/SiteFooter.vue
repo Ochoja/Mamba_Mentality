@@ -38,6 +38,10 @@ footer {
       color: #fff;
       font-size: 2em;
     }
+
+    a:hover{
+      color: var(--secondary-color)
+    }
   }
 }
 </style>
