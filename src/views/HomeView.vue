@@ -1,7 +1,8 @@
 <script setup>
+import { ref } from 'vue'
 import Button from '../components/DynamicButton.vue'
 import TrainingCard from '../components/TrainingCard.vue'
-import Modal from '../components/TrainingModal.vue'
+import TrainingModal from '../components/TrainingModal.vue'
 
 const trainings = [
   {
@@ -32,11 +33,15 @@ const trainings = [
       'https://ik.imagekit.io/Ochoja01/Mamba_Mentality/training3.png?updatedAt=1687380869141'
   }
 ]
+
+const openModal = ref(false)
+
+const closePopup = () => (openModal.value = false)
 </script>
 
 <template>
-  <Teleport to="body">
-    <Modal></Modal>
+  <Teleport to="body" v-if="openModal">
+    <TrainingModal @closeModal="closePopup"></TrainingModal>
   </Teleport>
 
   <header>
@@ -44,7 +49,7 @@ const trainings = [
       <h1 class="slogan">Never let good enough <span class="green">be</span> enough!</h1>
       <div class="caption">Curated videos and materials to take your game to the next level</div>
 
-      <Button>Improve My Game</Button>
+      <Button @click="openModal = true">Improve My Game</Button>
     </div>
   </header>
 

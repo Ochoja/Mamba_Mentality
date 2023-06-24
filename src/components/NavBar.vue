@@ -1,12 +1,22 @@
 <script setup>
+import { ref } from 'vue'
 import Button from './DynamicButton.vue'
+import TrainingModal from './TrainingModal.vue'
+
+const isModalOpen = ref(false)
+
+const closeModal = () => (isModalOpen.value = false)
 </script>
 
 <template>
   <nav>
     <div class="logo">Mamba Mentality</div>
-    <Button>Improve My Game</Button>
+    <Button @click="isModalOpen = true">Improve My Game</Button>
   </nav>
+
+  <Teleport to="body" v-if="isModalOpen">
+    <TrainingModal @closeModal="closeModal"></TrainingModal>
+  </Teleport>
 </template>
 
 <style lang="scss" scoped>

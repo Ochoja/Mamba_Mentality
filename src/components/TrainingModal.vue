@@ -10,10 +10,10 @@ const levels = reactive([
 ])
 
 const skills = reactive([
-  { id: 1, trait: 'Shooting', active: false },
-  { id: 2, trait: 'Dribbling', active: false },
-  { id: 3, trait: 'Passing', active: false },
-  { id: 4, trait: 'Finishing', active: false }
+  { id: 1, trait: 'Shooting', active: false, icon: 'icon-park-outline:basketball-one' },
+  { id: 2, trait: 'Dribbling', active: false, icon: 'tabler:play-basketball' },
+  { id: 3, trait: 'Passing', active: false, icon: 'ph:basketball' },
+  { id: 4, trait: 'Finishing', active: false, icon: 'icon-park-outline:play-basketball' }
 ])
 
 //selects item and deselects others
@@ -40,6 +40,8 @@ function clear() {
 <template>
   <div class="background">
     <div class="popup">
+      <Icon @click="$emit('closeModal')" icon="iconamoon:close-bold" class="close-btn" />
+
       <div class="heading">
         <h2>Personalize Training</h2>
         <p>Choose skill level and area you wish to improve on</p>
@@ -69,7 +71,7 @@ function clear() {
           @click="toggleActive('skills', skill.id)"
         >
           <div class="text">{{ skill.trait }}</div>
-          <div class="icon"></div>
+          <div class="icon"><Icon :icon="skill.icon" /></div>
         </div>
       </div>
 
@@ -95,11 +97,19 @@ function clear() {
   overflow-y: auto;
 
   .popup {
+    position: relative;
     background: #fff;
     padding: 30px;
     max-width: 95%;
     border-radius: 4px;
 
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 1.6em;
+      cursor: pointer;
+    }
     .heading {
       margin-bottom: 30px;
     }
@@ -115,6 +125,7 @@ function clear() {
 
     .items {
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
       margin-bottom: 25px;
 
@@ -126,6 +137,7 @@ function clear() {
         .text {
           font-weight: 500;
           text-align: center;
+          margin-bottom: 5px;
         }
 
         .icons {
@@ -134,6 +146,12 @@ function clear() {
           justify-content: center;
           font-size: 1.4em;
           color: var(--secondary-color);
+        }
+
+        .icon {
+          display: flex;
+          justify-content: center;
+          font-size: 2.5em;
         }
       }
 

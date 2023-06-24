@@ -7,10 +7,14 @@ import { Icon } from '@iconify/vue'
     <div class="logo">Mamba Mentality</div>
 
     <div class="icons">
-      <a href=""><Icon icon="mdi:github" /></a>
-      <a href=""><Icon icon="ri:instagram-fill" /></a>
-      <a href=""><Icon icon="mdi:linkedin" /></a>
-      <a href=""><Icon icon="mdi:github" /></a>
+      <a href="https://github.com/Ochoja"><Icon icon="mdi:github" /></a>
+      <a href="https://www.instagram.com/daniel_ochoja/"><Icon icon="ri:instagram-fill" /></a>
+      <a href="https://www.linkedin.com/in/daniel-ochoja-951b03232/"
+        ><Icon icon="mdi:linkedin"
+      /></a>
+      <a href="https://www.upwork.com/freelancers/~0168a779cdf58e1da2"
+        ><Icon icon="bxl:upwork"
+      /></a>
     </div>
   </footer>
 </template>
@@ -39,8 +43,8 @@ footer {
       font-size: 2em;
     }
 
-    a:hover{
-      color: var(--secondary-color)
+    a:hover {
+      color: var(--secondary-color);
     }
   }
 }
