@@ -4,7 +4,7 @@ import { Icon } from '@iconify/vue'
 
 <template>
   <footer>
-    <div class="logo">Mamba Mentality</div>
+    <div class="logo"><RouterLink to="/">Mamba Mentality</RouterLink></div>
 
     <div class="icons">
       <a href="https://github.com/Ochoja"><Icon icon="mdi:github" /></a>
@@ -32,6 +32,11 @@ footer {
   .logo {
     font-size: 1.1em;
     font-weight: 600;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   .icons {

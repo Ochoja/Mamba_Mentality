@@ -10,7 +10,7 @@ const closeModal = () => (isModalOpen.value = false)
 
 <template>
   <nav>
-    <div class="logo">Mamba Mentality</div>
+    <div class="logo"><RouterLink to="/">Mamba Mentality</RouterLink></div>
     <Button @click="isModalOpen = true">Improve My Game</Button>
   </nav>
 
@@ -28,9 +28,13 @@ nav {
   padding: 15px 30px;
 
   .logo {
-    color: #fff;
     font-size: 1.3em;
     font-weight: 600;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 }
 </style>

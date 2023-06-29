@@ -63,11 +63,14 @@ onMounted(() => {
 
   <div class="videos">
     <div v-for="video in videos" :key="video.key" class="video">
-      <iframe :src="`https://www.youtube.com/embed/${video.id}`" frameborder="0" allowfullscreen></iframe>
+      <iframe
+        :src="`https://www.youtube.com/embed/${video.id}`"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 h1 {
@@ -86,7 +89,7 @@ h1 {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
-    max-width: 500px;
+    max-width: 750px;
   }
 
   .video iframe {
@@ -95,6 +98,19 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .videos {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .videos {
+    width: 90%;
+    grid-template-columns: 1fr;
   }
 }
 </style>
