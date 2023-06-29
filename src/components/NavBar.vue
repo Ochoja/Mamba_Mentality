@@ -32,7 +32,7 @@ nav {
     font-weight: 600;
 
     a {
-      color: inherit;
+      color: #fff;
       text-decoration: none;
     }
   }
