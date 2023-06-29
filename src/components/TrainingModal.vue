@@ -27,7 +27,7 @@ function toggleActive(array, id) {
   }
 
   id = id - 1 //index is n-1
-  arr[id].active = !arr[id].active //invert value of active selection
+  arr[id].active = !arr[id].active //invert value of selected item
 }
 
 //clear selections
