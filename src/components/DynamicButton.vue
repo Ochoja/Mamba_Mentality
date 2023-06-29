@@ -1,5 +1,5 @@
 <script setup>
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
@@ -8,7 +8,7 @@ const props = defineProps({
   route: String //changes route eg <Button to="/training"></Button>
 })
 
-function goToPage(){
+function goToPage() {
   router.push(`${props.route}`)
 }
 </script>

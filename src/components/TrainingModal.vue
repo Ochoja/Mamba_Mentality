@@ -16,10 +16,9 @@ const skills = reactive([
   { id: 4, trait: 'Finishing', active: false, icon: 'icon-park-outline:play-basketball' }
 ])
 
-
-function getSelection(){
-  let skill = ""
-  let area = ""
+function getSelection() {
+  let skill = ''
+  let area = ''
 
   for (const item of levels) {
     if (item.active == true) {
@@ -35,8 +34,6 @@ function getSelection(){
 
   return `/trainings/${skill}+${area}+drills`
 }
-
-
 
 //selects item and deselects others
 function toggleActive(array, id) {
