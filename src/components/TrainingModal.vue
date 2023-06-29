@@ -16,6 +16,28 @@ const skills = reactive([
   { id: 4, trait: 'Finishing', active: false, icon: 'icon-park-outline:play-basketball' }
 ])
 
+
+function getSelection(){
+  let skill = ""
+  let area = ""
+
+  for (const item of levels) {
+    if (item.active == true) {
+      skill = item.skill
+    }
+  }
+
+  for (const item of skills) {
+    if (item.active == true) {
+      area = item.trait
+    }
+  }
+
+  return `/trainings/${skill}+${area}+drills`
+}
+
+
+
 //selects item and deselects others
 function toggleActive(array, id) {
   let arr = eval(array) //array holds name of array(ie levels, skills)
@@ -27,7 +49,7 @@ function toggleActive(array, id) {
   }
 
   id = id - 1 //index is n-1
-  arr[id].active = !arr[id].active //invert value of selected item
+  arr[id].active = !arr[id].active //invert value of active selection
 }
 
 //clear selections
@@ -76,7 +98,7 @@ function clear() {
       </div>
 
       <div class="buttons">
-        <Button>Get Training</Button>
+        <Button @click="$emit('closeModal')" :route="getSelection()">Get Training</Button>
         <Button type="danger" @click="clear()">Clear Selection</Button>
       </div>
     </div>
