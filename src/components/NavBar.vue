@@ -11,7 +11,11 @@ const closeModal = () => (isModalOpen.value = false)
 <template>
   <nav>
     <div class="logo"><RouterLink to="/">Mamba Mentality</RouterLink></div>
-    <Button @click="isModalOpen = true">Improve My Game</Button>
+
+    <div class="more">
+      <div class="about"><RouterLink to="/about">About</RouterLink></div>
+      <Button @click="isModalOpen = true">Improve My Game</Button>
+    </div>
   </nav>
 
   <Teleport to="body" v-if="isModalOpen">
@@ -34,6 +38,23 @@ nav {
     a {
       color: #fff;
       text-decoration: none;
+    }
+  }
+
+  .more {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: var(--secondary-color);
     }
   }
 }
