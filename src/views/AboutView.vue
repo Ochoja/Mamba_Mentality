@@ -17,17 +17,23 @@ import Button from '../components/DynamicButton.vue'
         pro, you can find the resources you need Join us today and discover the joy of basketball!
       </div>
       <div>
-      <Button route="/">Take Me There</Button>
+        <Button route="/">Take Me There</Button>
       </div>
     </div>
     <div class="img">
-      <img src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/pexels-pixabay-267761__1_.jpg?updatedAt=1688686113575" alt="">
+      <img
+        src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/pexels-pixabay-267761__1_.jpg?updatedAt=1688686113575"
+        alt=""
+      />
     </div>
   </section>
 
   <section class="feature second">
-        <div class="img">
-      <img src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/pexels-pnw-production-8979932__1_.jpg?updatedAt=1688686117758" alt="">
+    <div class="img">
+      <img
+        src="https://ik.imagekit.io/Ochoja01/Mamba_Mentality/pexels-pnw-production-8979932__1_.jpg?updatedAt=1688686117758"
+        alt=""
+      />
     </div>
     <div class="text">
       <h2>TURN YOUR WEAKNESSES INTO STRENGTH</h2>
@@ -36,7 +42,7 @@ import Button from '../components/DynamicButton.vue'
         player. Improve on areas that are lacking and become a complete player
       </div>
       <div>
-      <Button route="/">Elevate your Game</Button>
+        <Button route="/">Elevate your Game</Button>
       </div>
     </div>
   </section>
@@ -47,7 +53,7 @@ import Button from '../components/DynamicButton.vue'
   height: 65vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     url(https://ik.imagekit.io/Ochoja01/Mamba_Mentality/hero2.png?updatedAt=1688683898154),
-    lightgray 50% / cover ;
+    lightgray 50% / cover;
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -67,7 +73,7 @@ import Button from '../components/DynamicButton.vue'
   }
 }
 
-.feature{
+.feature {
   margin-top: 50px !important;
   width: 90%;
   margin: auto;
@@ -75,25 +81,25 @@ import Button from '../components/DynamicButton.vue'
   grid-template-columns: 1fr 1fr;
   gap: 150px;
 
-  .text{
+  .text {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    h2{
+    h2 {
       font-size: 2.4em;
     }
-    .caption{
+    .caption {
       margin-bottom: 12px;
       font-size: 1.2em;
     }
   }
 
-  .img{
+  .img {
     height: 80vh;
     width: 100%;
 
-    img{
+    img {
       border-radius: 4px;
       height: inherit;
       width: 100%;
@@ -103,21 +109,21 @@ import Button from '../components/DynamicButton.vue'
 }
 
 @media screen and (max-width: 980px) {
-  .feature{
+  .feature {
     gap: 60px;
 
-    .img{
+    .img {
       height: 65vh;
     }
   }
 }
 
 @media screen and (max-width: 780px) {
-  .feature{
+  .feature {
     gap: 30px;
     grid-template-columns: 1fr;
 
-    .img{
+    .img {
       height: 75vh;
       grid-row: 2;
     }

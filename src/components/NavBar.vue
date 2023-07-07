@@ -1,12 +1,20 @@
 <script setup>
-import { Icon } from '@iconify/vue';
-import { ref } from 'vue'
+import { Icon } from '@iconify/vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import Button from './DynamicButton.vue'
 import TrainingModal from './TrainingModal.vue'
 
 const isModalOpen = ref(false)
 const menuOpen = ref(false)
+const route = useRoute()
 
+//close menu when route changes
+watch(route, () => {
+  menuOpen.value = false
+})
+
+//close popup modal
 const closeModal = () => (isModalOpen.value = false)
 </script>
 
@@ -20,17 +28,19 @@ const closeModal = () => (isModalOpen.value = false)
     </div>
 
     <div class="mobile">
-      <div class="hamburger" @click="menuOpen=!menuOpen">
-        <Icon icon="streamline:interface-setting-menu-parallel-hamburger-square-navigation-parallel-hamburger-buttonmenu-square" />
+      <div class="hamburger" @click="menuOpen = !menuOpen">
+        <Icon
+          icon="streamline:interface-setting-menu-parallel-hamburger-square-navigation-parallel-hamburger-buttonmenu-square"
+        />
       </div>
     </div>
 
     <div class="mobile-items" v-if="menuOpen">
-        <div class="about"><RouterLink to="/about">About</RouterLink></div>
-        <div>
+      <div class="about"><RouterLink to="/about">About</RouterLink></div>
+      <div>
         <Button @click="isModalOpen = true">Improve My Game</Button>
-        </div>
       </div>
+    </div>
   </nav>
 
   <Teleport to="body" v-if="isModalOpen">
@@ -73,26 +83,26 @@ nav {
     }
   }
 
-  .mobile{
+  .mobile {
     display: none;
   }
 
   @media screen and (max-width: 650px) {
-    .more{
-    display: none;
+    .more {
+      display: none;
     }
 
-    .mobile{
+    .mobile {
       display: block;
-      
-      .hamburger{
+
+      .hamburger {
         color: #fff;
         font-size: 1.8em;
         cursor: pointer;
       }
     }
 
-    .mobile-items{
+    .mobile-items {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -107,15 +117,15 @@ nav {
       padding: 15px 20px;
 
       a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-    }
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+      }
 
-    a:hover {
-      text-decoration: underline;
-      color: var(--secondary-color);
-    }
+      a:hover {
+        text-decoration: underline;
+        color: var(--secondary-color);
+      }
     }
   }
 }

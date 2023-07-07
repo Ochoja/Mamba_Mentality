@@ -36,7 +36,7 @@ button {
   cursor: pointer;
 }
 
-button:disabled{
+button:disabled {
   background: #c8d3b6;
   color: #524b4b;
 }

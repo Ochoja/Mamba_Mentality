@@ -20,13 +20,16 @@ const skills = reactive([
   { id: 4, trait: 'Finishing', active: false, icon: 'icon-park-outline:play-basketball' }
 ])
 
-watch(() => [isAreaSelected.value, isSkillSelected.value], () => {
-  if(isAreaSelected.value && isSkillSelected.value) {
-    isDisabled.value = false
-  } else{
-    isDisabled.value = true
+watch(
+  () => [isAreaSelected.value, isSkillSelected.value],
+  () => {
+    if (isAreaSelected.value && isSkillSelected.value) {
+      isDisabled.value = false
+    } else {
+      isDisabled.value = true
+    }
   }
-})
+)
 
 function getSelection() {
   let skill = ''
@@ -60,12 +63,12 @@ function toggleActive(array, id) {
   id = id - 1 //index is n-1
   arr[id].active = !arr[id].active //invert value of active selection
 
-  if(array == "skills") {
+  if (array == 'skills') {
     if (arr[id].active == true) isSkillSelected.value = true
     else isSkillSelected.value = false
   }
 
-  if(array == "levels") {
+  if (array == 'levels') {
     if (arr[id].active == true) isAreaSelected.value = true
     else isAreaSelected.value = false
   }
@@ -117,7 +120,9 @@ function clear() {
       </div>
 
       <div class="buttons">
-        <Button @click="$emit('closeModal')" :route="getSelection()" :disabled="isDisabled">Get Training</Button>
+        <Button @click="$emit('closeModal')" :route="getSelection()" :disabled="isDisabled"
+          >Get Training</Button
+        >
         <Button type="danger" @click="clear()">Clear Selection</Button>
       </div>
     </div>
