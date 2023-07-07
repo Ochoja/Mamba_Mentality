@@ -36,6 +36,11 @@ button {
   cursor: pointer;
 }
 
+button:disabled{
+  background: #c8d3b6;
+  color: #524b4b;
+}
+
 .danger {
   background: #ff0000;
   color: #fff;

@@ -47,7 +47,7 @@ import Button from '../components/DynamicButton.vue'
   height: 65vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     url(https://ik.imagekit.io/Ochoja01/Mamba_Mentality/hero2.png?updatedAt=1688683898154),
-    lightgray 50% / cover no-repeat;
+    lightgray 50% / cover ;
   background-position: center;
   display: flex;
   flex-direction: column;
