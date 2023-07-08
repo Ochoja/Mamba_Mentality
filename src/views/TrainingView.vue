@@ -8,7 +8,7 @@ const query = ref(route.params.query)
 const title = ref(query.value.replaceAll('+', ' ')) //page title
 const videos = ref([])
 
-// change title when route is updated
+// change page title and content when route is updated
 watch(
   () => route.params.query,
   () => {
@@ -19,16 +19,7 @@ watch(
   }
 )
 
-// watch(
-//   () => route.params.query,
-//   (to, from) => {
-//     videos.value = []
-//     title.value = query.value.replaceAll('+', ' ')
-//     console.log(videos)
-//     getTraining()
-//   }
-// )
-
+// Function to consume youtube API
 async function getTraining(search_query) {
   const endpoint = 'https://www.googleapis.com/youtube/v3/search'
   const api_key = 'AIzaSyC4-q_uDSIJLFzNaGuKPmZBGFg74LY-tJg'
@@ -51,6 +42,7 @@ async function getTraining(search_query) {
   }
 }
 
+// consume API when mounted
 onMounted(() => {
   getTraining(route.params.query)
 })
