@@ -22,7 +22,7 @@ watch(
 // Function to consume youtube API
 async function getTraining(search_query) {
   const endpoint = 'https://www.googleapis.com/youtube/v3/search'
-  const api_key = 'AIzaSyC4-q_uDSIJLFzNaGuKPmZBGFg74LY-tJg'
+  const api_key = 'yourapikey'
   const final_query = `${endpoint}?key=${api_key}&type=video&part=snippet&maxResults=10&q=${search_query}+basketball`
 
   try {
